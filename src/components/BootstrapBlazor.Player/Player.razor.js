@@ -114,10 +114,7 @@ export function dispose(id) {
 const handlerEventName = (name, p) => {
     const { el, invoke, method, player } = p;
     player.on(name, () => {
-        const fire = el.getAttribute('data-bb-event') === 'true';
-        if (fire) {
-            invoke.invokeMethodAsync(method, name);
-        }
+        invoke.invokeMethodAsync(method, name);
     });
 }
 
